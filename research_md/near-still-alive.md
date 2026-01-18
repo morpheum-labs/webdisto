@@ -131,8 +131,6 @@ NEAR's custom address format prioritizes usability over traditional hex-based sy
 
 - **Rationale**: To enhance UX and accessibility, making blockchain feel like email/social handles. This lowers barriers for mass adoption (e.g., no copy-paste mishaps), supports multi-key permissions for security, and integrates with chain abstraction for cross-chain ops. It's not just cosmetic—accounts tie into NEAR's model where they cover storage/gas, enabling feeless interactions for users.
 
-This format aligns with NEAR's "user-centric" ethos but can complicate integrations with hex-only tools.
-
 ### Why NEAR Protocol Aims for a Web2-Like Experience, Including Email Integration for Accounts
 
 NEAR Protocol's design philosophy centers on making blockchain technology accessible to the masses, including non-technical users, enterprises, and developers transitioning from Web2. This "Web2-like" feel is intentional to lower entry barriers, reduce friction, and drive mass adoption—targeting 1 billion users by abstracting away complexities like seed phrases, gas management, and cryptic addresses. Founders like Illia Polosukhin have emphasized building a "user-owned internet" where interactions mimic familiar apps (e.g., email sign-ups, seamless logins) to compete with centralized platforms like Google or Facebook. This contrasts with chains like Ethereum, where UX can feel clunky for beginners due to hex addresses and high fees.
@@ -175,3 +173,41 @@ NEAR's Web2-like UX and account model can be a double-edged sword for large volu
 - **Market Volatility**: Despite fundamentals, price lags in bull runs; trustless transfers have finality constraints in some cross-chain scenarios.
 
 In summary, it's more appealing to retail/high-throughput users than pure large-volume traders, who might stick to liquidity-heavy chains. However, with 2025-2026 growth (e.g., Ethereum wallet integration), it's gaining traction.
+
+### Notable "Rekts" (Hacks, Exploits, and Security Incidents) on NEAR Protocol
+
+NEAR Protocol itself has not suffered from massive, protocol-level exploits like some other blockchains (e.g., Ronin's $625M hack or Solana's outages), but it has experienced several security incidents, data breaches, and ecosystem project hacks since its launch in 2020. These have generally been contained, with no confirmed losses exceeding a few million dollars directly from the core protocol. Below is a detailed overview based on documented events up to early 2026, focusing on notable cases. I've prioritized verifiable incidents involving financial losses ("rekts" in crypto slang) or significant risks.
+
+#### 1. **Skyward Finance Exploit (November 2022) – ~$3.2M Loss**
+   - **Details**: Skyward Finance, an IDO (Initial DEX Offering) platform built on NEAR, had its treasury drained of 1.1 million NEAR tokens (valued at ~$3.2M at the time). This was the first major exploit of a NEAR-based DeFi project. The attacker exploited a vulnerability in the protocol's token redemption mechanism, allowing them to repeatedly redeem and drain funds. The project team acknowledged the hack and wound down operations shortly after.
+   - **Impact**: Full treasury drain; project effectively rugged. No recovery for users, but it highlighted early DeFi risks on NEAR's ecosystem.
+   - **Why Notable?**: Marked NEAR's entry into the "DeFi exploits" list, raising concerns about smart contract security in its nascent dApp space.
+   - **Resolution**: NEAR Foundation did not intervene directly; the incident spurred better auditing practices for NEAR projects.
+
+#### 2. **Rainbow Bridge Attempted Exploit (May 2022) – No Loss to Protocol, Hacker Lost ~$7K**
+   - **Details**: Rainbow Bridge, NEAR's cross-chain bridge for transferring tokens between NEAR, Aurora (NEAR's EVM layer), and Ethereum, was targeted in an exploit attempt. Attackers tried to submit fabricated blocks to drain funds but were thwarted by automated security measures. The hackers ended up losing 5 ETH (~$7K) in failed transaction fees.
+   - **Impact**: No funds lost from the bridge; it demonstrated the robustness of NEAR's bridge design against common cross-chain attacks (e.g., unlike the $568M BSC Bridge hack).
+   - **Why Notable?**: A "near-miss" that cost the attackers money, showcasing NEAR's proactive defenses. Bridges are frequent hack targets (over $2B lost industry-wide in 2022 alone), so this failure for hackers was a win for NEAR.
+
+#### 3. **NEAR Wallet Seed Phrase Vulnerability (June-August 2022) – Potential Exposure, No Confirmed Losses**
+   - **Details**: A bug in the official NEAR Web Wallet allowed seed phrases (recovery keys) to be leaked to a third-party service when users selected email as a recovery method. This was similar to the Slope wallet exploit on Solana that led to $8M+ losses. The issue was reported in June 2022 and patched by August, affecting potentially thousands of users who had set up email recovery.
+   - **Impact**: No direct financial losses reported, but exposed users to phishing or key theft risks. NEAR urged users to rotate keys and migrate wallets.
+   - **Why Notable?**: Highlighted UX/security trade-offs in NEAR's user-friendly wallet design. It was fixed quickly, but echoed broader wallet vulnerabilities across chains.
+
+#### 4. **User Data Breach (Undisclosed Date, Disclosed ~2023) – Email/SMS Exposure, No Financial Loss**
+   - **Details**: NEAR disclosed a breach exposing wallet recovery data, including emails and phone numbers tied to user accounts. This stemmed from a third-party integration flaw, potentially enabling targeted phishing attacks.
+   - **Impact**: No funds stolen, but increased risk of social engineering exploits (common in crypto, leading to ~$4B in losses industry-wide by 2023).
+   - **Why Notable?**: Part of a pattern of privacy issues; NEAR's focus on Web2-like UX (e.g., email recovery) sometimes introduces centralized risks.
+
+#### 5. **Official X (Twitter) Account Hack (September 2024) – No Financial Loss**
+   - **Details**: NEAR's official X account was compromised, with the attacker posting phishing links or scams. This is a common "rekt" for projects (e.g., similar to hacks on other protocols' socials leading to fake airdrops).
+   - **Impact**: Potential user losses from clicking malicious links, but no on-chain exploits. Account was recovered quickly.
+   - **Why Notable?**: Social hacks can erode trust and lead to indirect rekts; NEAR's large following (~1M+) amplified the risk.
+
+#### Other Minor or Ecosystem-Related Incidents
+- **Network Congestion (2024)**: Inscriptions (similar to Ordinals on Bitcoin) caused temporary overloads and high fees, but no exploits or losses—just usability issues.
+- **General DeFi Ecosystem Risks**: NEAR dApps like Ref Finance or Burrow have faced flash loan attacks or minor bugs, but none exceeded $1M in losses. Industry reports list NEAR as relatively secure compared to Ethereum or BSC, with total DeFi hacks on NEAR under $10M cumulative.
+- **No Major 2025-2026 Incidents**: Recent reports (e.g., June 2025's $114M multi-chain losses) don't feature NEAR prominently. Truebit ($26M hack in Jan 2026) is unrelated, despite some posts confusing it.
+
+#### Overall Assessment
+NEAR's sharding and PoS design have helped avoid catastrophic failures, but early ecosystem projects like Skyward show vulnerabilities in dApps. Total confirmed losses are low (~$5-10M across incidents) compared to competitors (e.g., $4B+ in DeFi hacks overall). The protocol emphasizes audits and bug bounties, with incidents leading to improvements like better wallet security. If you're building or using NEAR, focus on audited contracts and key management to avoid personal "rekts." No evidence of ongoing major vulnerabilities as of Jan 2026.
